@@ -1,9 +1,9 @@
 <div class="tree-posts">
 
-    <h3>posts = [</h3>
+    <h3>{{ include.name | replace: " ", "_" }} = [</h3>
 
     {% for post in site.posts %}
-
+    {% if post.categories contains include.name %}
     <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
         <div class="content">
             <a title="Open the post" href="{{ post.url | prepend: site.baseurl }}">
@@ -12,6 +12,7 @@
         </div>
     </article>
 
+    {% endif %}
     {% endfor %}
     <h3>]</h3>
 
