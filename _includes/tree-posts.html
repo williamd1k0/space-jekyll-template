@@ -1,9 +1,8 @@
 <div class="tree-posts">
 
-    <h3>posts = [</h3>
+    <h3>recent_posts = [</h3>
 
-    {% for post in site.posts %}
-
+    {% for post in site.posts limit:5 %}
     <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
         <div class="content">
             <a title="Open the post" href="{{ post.url | prepend: site.baseurl }}">
@@ -11,7 +10,6 @@
             </a>
         </div>
     </article>
-
     {% endfor %}
     <h3>]</h3>
 
