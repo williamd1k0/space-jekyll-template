@@ -20,16 +20,16 @@
   <div id="topmenu">
     {% assign filename = page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '.md' %}
     <ul>
-      <li><span>1</span></li>
-      <li><span> {{page.url}}</span></li>
-      <li><span>⌘ blogspace λ </span></li>
-      <li><span>* Menu</span></li>
+      <li><span>>>></span></li>
+      <li><span> navigation </span></li>
+      <li><span>Menu </span></li>
+      <li><span>.show( self )</span></li>
     </ul>
 
     <ul>
-      <li><span>utf-8</span></li>
-      <li><span>web</span></li>
-      <li><span>.html</span></li>
+      <li><span> module </span></li>
+      <li><span>{{page.url | replace_first: "/", "" | replace_last: "/", ""}}</span></li>
+      <li><span>__main__.py</span></li>
     </ul>
   </div>
 
@@ -44,7 +44,7 @@
       {% else %}
         <li>
           <span class="counter-menu">{{counter}}</span>
-          <svg viewBox="0 0 50 50" class="icon-arrow-menu"><use xlink:href="#icon-right-arrow"></use></svg>
+           <svg viewBox="0 0 50 50" class="icon-arrow-menu"><use xlink:href="#icon-right-arrow"></use></svg> 
           <a href="{{ site.url }}{{ link.url }}"> {{ link.title }}</a>
         </li>
       {% endif %}
